@@ -29,7 +29,8 @@ public class ConferenceServiceImpl implements ConferenceService {
     public List<ReviewResponse> getReviewsByConferenceId(Long conferenceId) {
         return reviewService.getReviewsByConferenceId(conferenceId);
     }
-        @Override
+
+    @Override
     @Transactional(readOnly = true)
     public List<ConferenceResponse> getAllConferences() {
         return conferenceRepository.findAll().stream()
@@ -74,11 +75,6 @@ public class ConferenceServiceImpl implements ConferenceService {
     public ConferenceResponse addReviewToConference(Long conferenceId, Long reviewId) {
         Conference conference = getConferenceOrThrow(conferenceId);
         ReviewResponse reviewResponse = reviewService.getReviewById(reviewId);
-        
-        // Here you would typically add the review to the conference
-        // This is a simplified version - you might need to adjust based on your requirements
-        // For example, you might want to update the conference's average score
-        
         return conferenceMapper.fromConference(conference);
     }
 
@@ -96,5 +92,4 @@ public class ConferenceServiceImpl implements ConferenceService {
         return conferenceRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Conference not found with id: " + id));
     }
-
 }

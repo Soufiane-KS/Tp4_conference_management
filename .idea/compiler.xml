@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discovery-service" />
+        <module name="gateway-service" />
       </profile>
       <profile name="Annotation profile for keynote-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -38,6 +39,7 @@
       <module name="conference-service" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="keynote-service" options="-parameters" />
     </option>
   </component>
